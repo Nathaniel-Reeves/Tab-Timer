@@ -18,7 +18,20 @@ changeColor.addEventListener("click", async () => {
 // The body of this function will be executed as a content script inside the
 // current page
 function setPageBackgroundColor() {
-    chrome.storage.sync.get("color", ({ color }) => {
-        document.body.style.backgroundColor = color;
-    });
+    // chrome.storage.sync.get("color", ({ color }) => {
+    //     document.body.style.backgroundColor = color;
+    // });
+
+
+    // Nathaniel Reeves - This code sets every google search result
+    // red and adds a ::after tag containing "  -  This is Text"
+    // after each search result.  
+    //
+    // Note: class .DKV0Md is the class every search result
+    //       link falls under. this makes them easy to select.
+    let searchResults = document.querySelectorAll(".DKV0Md");
+    for (let i = 0; i < searchResults.length; i++) {
+        searchResults[i].after("   -   This is Text");
+        searchResults[i].style.color = "#ff3434";
+    }
 }
