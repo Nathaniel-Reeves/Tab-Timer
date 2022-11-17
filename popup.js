@@ -11,17 +11,13 @@ changeColor.addEventListener("click", async () => {
 
     chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        func: setPageBackgroundColor,
+        func: addIcons,
     });
 });
 
 // The body of this function will be executed as a content script inside the
 // current page
-function setPageBackgroundColor() {
-    // chrome.storage.sync.get("color", ({ color }) => {
-    //     document.body.style.backgroundColor = color;
-    // });
-
+function addIcons() {
 
     // Nathaniel Reeves - This code sets every google search result
     // red and adds a ::after tag containing "  -  This is Text"

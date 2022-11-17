@@ -1,6 +1,6 @@
 {
-    "name": "Getting Started Example",
-    "description": "Build an Extension!",
+    "name": "Heads-Up",
+    "description": "Flags Google search reults with useful information.",
     "version": "1.0",
     "manifest_version": 3,
     "background": {
